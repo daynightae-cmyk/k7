@@ -11,6 +11,7 @@ import { PodcastTemplate } from "./templates/PodcastTemplate";
 import { GamingTemplate } from "./templates/GamingTemplate";
 import { TemplateSelector } from "./components/TemplateSelector";
 import { StudioInterface } from "./components/StudioInterface";
+import { BeautyControlInterface } from "./components/BeautyControlInterface";
 
 // مكونات القوالب
 const templateComponents = {
@@ -32,6 +33,17 @@ export const RemotionRoot: React.FC = () => {
         id="StudioInterface"
         component={StudioInterface}
         durationInFrames={3600} // دقيقتان للاستكشاف
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={{}}
+      />
+
+      {/* واجهة التحكم بالتأثي��ات الجمالية */}
+      <Composition
+        id="BeautyControlInterface"
+        component={BeautyControlInterface}
+        durationInFrames={1800} // 60 ثانية للاستكشاف
         fps={30}
         width={1920}
         height={1080}
@@ -95,7 +107,7 @@ export const RemotionRoot: React.FC = () => {
               },
               description: {
                 type: "string",
-                description: "الوصف",
+                description: "ال��صف",
                 defaultValue:
                   template.customizableProps.text?.description || "وصف افتراضي",
               },
